@@ -1,3 +1,34 @@
-gradio>=4.0.0
-pandas
-numpy
+# DataNetra.ai v5.5 — Requirements
+# Render deployment — Python 3.11
+# All versions tested for compatibility on Linux/Render build environment
+
+# ── Core UI ──────────────────────────────────────────────────────────────────
+gradio==4.44.1
+
+# ── Data & ML ────────────────────────────────────────────────────────────────
+pandas>=2.0.0
+numpy>=1.24.0,<2.0.0
+scikit-learn>=1.3.0
+statsmodels>=0.14.0
+
+# ── Forecasting (Prophet requires cmdstanpy + CmdStan on Linux) ──────────────
+prophet>=1.1.5
+cmdstanpy>=1.2.0
+
+# ── Visualisation ────────────────────────────────────────────────────────────
+matplotlib>=3.7.0
+
+# ── PDF Report Generation ────────────────────────────────────────────────────
+reportlab>=4.0.0
+
+# ── File Handling ────────────────────────────────────────────────────────────
+openpyxl>=3.1.0
+pdfplumber>=0.10.0
+
+# ── Database (optional — falls back to in-memory if unavailable) ─────────────
+SQLAlchemy>=2.0.0
+
+# ── Dependency conflict fixes (must be pinned) ───────────────────────────────
+# lark 1.2+ breaks jsonschema rfc3987 checker on Python 3.12 — pin safe version
+lark==1.1.9
+jsonschema==4.17.3
